@@ -15,4 +15,4 @@ jobs:
             nowUsername: ${{ secrets.NOW_USERNAME }}
             nowPassword: ${{ secrets.NOW_PASSWORD }}
             nowApikey:  ${{ secrets.NOW_APIKEY }}
-            nowInstallInstance: ${{ secrets.NOW_INSTALL_INSTANCE }}
+            nowInstance: ${{ secrets.NOW_INSTALL_INSTANCE }}

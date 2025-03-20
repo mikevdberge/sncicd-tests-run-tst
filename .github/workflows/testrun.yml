@@ -10,7 +10,7 @@ jobs:
        - name: Run Tests 
          uses: mikevdberge/sncicd-tests-run@1.0.3
          with:
-            testSuiteSysId: 123
+            testSuiteSysId: 891763283b5c22101680fec5e4e45a21
          env:
             nowUsername: ${{ secrets.NOW_USERNAME }}
             nowPassword: ${{ secrets.NOW_PASSWORD }}

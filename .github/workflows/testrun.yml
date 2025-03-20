@@ -7,7 +7,7 @@ jobs:
   ServiceNow-GitHub-Actions-Test:
     runs-on: ubuntu-latest
     steps:
-       - name: Run Tests 
+       - name: Run Tests Legacy
          uses: mikevdberge/sncicd-tests-run@1.0.10
          with:
             testSuiteSysId: 891763283b5c22101680fec5e4e45a21
@@ -15,5 +15,12 @@ jobs:
             nowUsername: ${{ secrets.NOW_USERNAME }}
             nowPassword: ${{ secrets.NOW_PASSWORD }}
             nowApikey:  ${{ secrets.NOW_APIKEY }}
-            #nowInstallInstance: ${{ secrets.NOW_INSTALL_INSTANCE }}
+            nowInstallInstance: ${{ secrets.NOW_INSTALL_INSTANCE }}
+
+       - name: Run Tests API Key
+         uses: mikevdberge/sncicd-tests-run@1.0.10
+         with:
+            testSuiteSysId: 891763283b5c22101680fec5e4e45a21
+         env:
+            nowApikey:  ${{ secrets.NOW_APIKEY }}
             nowFullInstance: ${{ secrets.NOW_FULL_INSTANCE }}

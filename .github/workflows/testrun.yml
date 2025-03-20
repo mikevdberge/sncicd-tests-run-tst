@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  ServiceNow-GitHub-Actions-Test:
+  ServiceNow-GitHub-Actions-Test-Legacy:
     environment: LEGACY  
     runs-on: ubuntu-latest
     steps:
@@ -15,12 +15,12 @@ jobs:
          env:
             nowUsername: ${{ secrets.NOW_USERNAME }}
             nowPassword: ${{ secrets.NOW_PASSWORD }}
-            nowApikey:  ${{ secrets.NOW_APIKEY }}
             nowInstallInstance: ${{ secrets.NOW_INSTALL_INSTANCE }}
 
   ServiceNow-GitHub-Actions-Test-API-Key:
     environment: API-KEY  
     runs-on: ubuntu-latest
+    needs: ServiceNow-GitHub-Actions-Test-Legacy
     steps:
        - name: Run Tests API Key
          uses: mikevdberge/sncicd-tests-run@1.0.10
@@ -28,4 +28,18 @@ jobs:
             testSuiteSysId: 891763283b5c22101680fec5e4e45a21
          env:
             nowApikey:  ${{ secrets.NOW_APIKEY }}
+            nowFullInstance: ${{ secrets.NOW_FULL_INSTANCE }}
+
+  ServiceNow-GitHub-Actions-Test-Basic-Auth:
+    environment: BASIC-AUTH 
+    runs-on: ubuntu-latest
+    needs: ServiceNow-GitHub-Actions-Test-API-Key
+    steps:
+       - name: Run Tests Basic Auth
+         uses: mikevdberge/sncicd-tests-run@1.0.10
+         with:
+            testSuiteSysId: 891763283b5c22101680fec5e4e45a21
+         env:
+            nowUsername: ${{ secrets.NOW_USERNAME }}
+            nowPassword: ${{ secrets.NOW_PASSWORD }}            
             nowFullInstance: ${{ secrets.NOW_FULL_INSTANCE }}

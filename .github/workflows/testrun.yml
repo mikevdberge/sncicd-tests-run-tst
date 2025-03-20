@@ -1,4 +1,4 @@
-name: ci
+name: ServiceNow GitHub Action tester
 
 on:
   push:
@@ -9,10 +9,11 @@ on:
       - '**' #every branch
 
 jobs:
-  test:
+  ServiceNow-GitHub-Actions-Test:
+    runs-on: ubuntu-latest
     steps:
        - name: Run Tests 
-         uses: ServiceNow/sncicd-tests-run@1.0
+         uses: ServiceNow/sncicd-tests-run@1.0.1
          with:
             testSuiteSysId: 123
          env:

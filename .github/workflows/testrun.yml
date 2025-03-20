@@ -1,0 +1,22 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - '**' #every branch
+  pull_request:
+    branches:
+      - '**' #every branch
+
+jobs:
+  test:
+    steps:
+       - name: Run Tests 
+         uses: ServiceNow/sncicd-tests-run@1.0
+         with:
+            testSuiteSysId: 123
+         env:
+            nowUsername: ${{ secrets.NOW_USERNAME }}
+            nowPassword: ${{ secrets.NOW_PASSWORD }}
+            nowApikey:  ${{ secrets.NOW_APIKEY }}
+            nowInstallInstance: ${{ secrets.NOW_INSTALL_INSTANCE }}

@@ -5,10 +5,12 @@ on:
 
 jobs:
   ServiceNow-GitHub-Actions-Test:
+    environment: LEGACY  
     runs-on: ubuntu-latest
     steps:
        - name: Run Tests Legacy
          uses: mikevdberge/sncicd-tests-run@1.0.10
+         environment: LEGACY
          with:
             testSuiteSysId: 891763283b5c22101680fec5e4e45a21
          env:
@@ -17,6 +19,10 @@ jobs:
             nowApikey:  ${{ secrets.NOW_APIKEY }}
             nowInstallInstance: ${{ secrets.NOW_INSTALL_INSTANCE }}
 
+  ServiceNow-GitHub-Actions-Test-API-Key:
+    environment: API KEY  
+    runs-on: ubuntu-latest
+    steps:
        - name: Run Tests API Key
          uses: mikevdberge/sncicd-tests-run@1.0.10
          with:

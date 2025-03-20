@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: Run Tests 
-         uses: mikevdberge/sncicd-tests-run@1.0.1
+         uses: mikevdberge/sncicd-tests-run@1.0.2
          with:
             testSuiteSysId: 123
          env:

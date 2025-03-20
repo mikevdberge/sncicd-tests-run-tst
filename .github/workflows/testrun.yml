@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: Run Tests Legacy
-         uses: mikevdberge/sncicd-tests-run@1.0.10
+         uses: mikevdberge/sncicd-tests-run@1.0.11
          with:
             testSuiteSysId: 891763283b5c22101680fec5e4e45a21
          env:
@@ -23,7 +23,7 @@ jobs:
     needs: ServiceNow-GitHub-Actions-Test-Legacy
     steps:
        - name: Run Tests API Key
-         uses: mikevdberge/sncicd-tests-run@1.0.10
+         uses: mikevdberge/sncicd-tests-run@1.0.11
          with:
             testSuiteSysId: 891763283b5c22101680fec5e4e45a21
          env:
@@ -36,7 +36,7 @@ jobs:
     needs: ServiceNow-GitHub-Actions-Test-API-Key
     steps:
        - name: Run Tests Basic Auth
-         uses: mikevdberge/sncicd-tests-run@1.0.10
+         uses: mikevdberge/sncicd-tests-run@1.0.11
          with:
             testSuiteSysId: 891763283b5c22101680fec5e4e45a21
          env:

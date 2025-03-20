@@ -1,12 +1,7 @@
 name: ServiceNow GitHub Action tester
 
 on:
-  push:
-    branches:
-      - '**' #every branch
-  pull_request:
-    branches:
-      - '**' #every branch
+  workflow_dispatch:
 
 jobs:
   ServiceNow-GitHub-Actions-Test:

@@ -15,7 +15,7 @@ jobs:
          env:
             nowUsername: ${{ secrets.NOW_USERNAME }}
             nowPassword: ${{ secrets.NOW_PASSWORD }}
-            nowInstallInstance: ${{ secrets.NOW_INSTALL_INSTANCE }}
+            nowInstallInstance: ${{ vars.NOW_INSTALL_INSTANCE }}
 
   ServiceNow-GitHub-Actions-Test-API-Key:
     environment: API-KEY  
@@ -28,7 +28,7 @@ jobs:
             testSuiteSysId: 891763283b5c22101680fec5e4e45a21
          env:
             nowApikey:  ${{ secrets.NOW_APIKEY }}
-            nowFullInstance: ${{ secrets.NOW_FULL_INSTANCE }}
+            nowFullInstance: ${{ vars.NOW_FULL_INSTANCE }}
 
   ServiceNow-GitHub-Actions-Test-Basic-Auth:
     environment: BASIC-AUTH 
@@ -42,4 +42,4 @@ jobs:
          env:
             nowUsername: ${{ secrets.NOW_USERNAME }}
             nowPassword: ${{ secrets.NOW_PASSWORD }}            
-            nowFullInstance: ${{ secrets.NOW_FULL_INSTANCE }}
+            nowFullInstance: ${{ vars.NOW_FULL_INSTANCE }}

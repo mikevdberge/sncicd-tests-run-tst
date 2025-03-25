@@ -43,3 +43,17 @@ jobs:
             nowUsername: ${{ secrets.NOW_USERNAME }}
             nowPassword: ${{ secrets.NOW_PASSWORD }}            
             nowFullInstance: ${{ vars.NOW_FULL_INSTANCE }}
+
+  ServiceNow-GitHub-Actions-Test-HMAC-Token:
+    environment: HMAC-Token  
+    runs-on: ubuntu-latest
+    needs: ServiceNow-GitHub-Actions-Test-Basic-Auth
+    steps:
+       - name: Run Tests HMAC Token
+         uses: mikevdberge/sncicd-tests-run@1.0.12
+         with:
+            testSuiteSysId: 891763283b5c22101680fec5e4e45a21
+         env:
+            nowHMACSecret: ${{ vars.HMAC_SECRET }}            
+            nowKeyID:  ${{ vars.NOW_KEY_ID }}
+            nowFullInstance: ${{ vars.NOW_FULL_INSTANCE }}            

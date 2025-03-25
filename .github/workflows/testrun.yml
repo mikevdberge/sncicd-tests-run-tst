@@ -50,12 +50,10 @@ jobs:
     needs: ServiceNow-GitHub-Actions-Test-Legacy
     steps:
        - name: Run Tests HMAC Token
-         uses: mikevdberge/sncicd-tests-run@master
+         uses: mikevdberge/sncicd-tests-run@1.0.13
          with:
             testSuiteSysId: 891763283b5c22101680fec5e4e45a21
          env:
             nowHMACSecret: ${{ vars.NOW_HMAC_SECRET }}            
             nowKeyID:  ${{ vars.NOW_KEY_ID }}
-            nowUsername: ${{ vars.NOW_USERNAME }}
-            nowPassword: ${{ vars.NOW_PASSWORD }}   
             nowFullInstance: ${{ vars.NOW_FULL_INSTANCE }}            

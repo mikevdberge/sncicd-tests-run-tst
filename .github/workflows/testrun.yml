@@ -50,7 +50,7 @@ jobs:
     needs: ServiceNow-GitHub-Actions-Test-Basic-Auth
     steps:
        - name: Run Tests HMAC Token
-         uses: mikevdberge/sncicd-tests-run@main
+         uses: mikevdberge/sncicd-tests-run@master
          with:
             testSuiteSysId: 891763283b5c22101680fec5e4e45a21
          env:

@@ -54,6 +54,6 @@ jobs:
          with:
             testSuiteSysId: 891763283b5c22101680fec5e4e45a21
          env:
-            nowHMACSecret: ${{ vars.HMAC_SECRET }}            
+            nowHMACSecret: ${{ vars.NOW_HMAC_SECRET }}            
             nowKeyID:  ${{ vars.NOW_KEY_ID }}
             nowFullInstance: ${{ vars.NOW_FULL_INSTANCE }}            
